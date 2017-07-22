@@ -10,15 +10,16 @@ import java.io.Serializable;
  * @description :
  */
 @Component()
-public class User implements Serializable{
-    private int id;
+public class UserPO implements Serializable {
+    private Integer id;
+
     private String name;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -27,6 +28,7 @@ public class User implements Serializable{
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
+
 }

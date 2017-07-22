@@ -1,6 +1,6 @@
 package com.linchao.dao;
 
-import com.linchao.po.User;
+import com.linchao.po.UserPO;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -13,14 +13,14 @@ import java.util.List;
  */
 
 public interface UserDao {
-    public User queryById(int id);
+    public UserPO queryById(int id);
 
-    public void save(User user);
+    public void save(UserPO user);
 
-    public void update(User u);
+    public void update(UserPO u);
 
     public void delete(int id);
 
-    public List<User> queryAll();
+    public List<UserPO> queryAll();
 
 }

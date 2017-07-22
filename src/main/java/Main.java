@@ -1,9 +1,11 @@
 import com.linchao.dao.UserDao;
-import com.linchao.po.User;
-import org.slf4j.Logger;
+import com.linchao.po.UserPO;
+import com.linchao.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import javax.xml.ws.Service;
 
 /**
  * @author : linchao
@@ -11,18 +13,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @description :
  */
 public class Main {
-    @Autowired
-    private User user;
 
-    @Autowired
-    private UserDao userDao;
+    private UserServiceImp userServiceImp;
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
         Main m = new Main();
-        m.user = (User) context.getBean("user");
-        m.user.setId(11);
-        m.user.getName();
-        System.out.println(m.user.getId());
+        m.userServiceImp = (UserServiceImp) context.getBean("userServiceImp");
+        System.out.println(m.userServiceImp);
     }
 }
